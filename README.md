@@ -43,13 +43,13 @@ Sebagian besar proyek ini bergantung pada [FFmpeg](https://ffmpeg.org/download.h
 
 ubah bagian ini :
 ```
-    clip = mpe.VideoFileClip(input_file)
-    clip.write_videofile(output_file)
+clip = mpe.VideoFileClip(input_file)
+clip.write_videofile(output_file)
 ```
 Menjadi :
 ```
-    ffmpeg_cmd = f'ffmpeg -hwaccel cuda -i "{input_file}" -c:v h264_nvenc "{output_file}"'
-    os.system(ffmpeg_cmd)
+ffmpeg_cmd = f'ffmpeg -hwaccel cuda -i "{input_file}" -c:v h264_nvenc "{output_file}"'
+os.system(ffmpeg_cmd)
 ```
 
 ## Authors
